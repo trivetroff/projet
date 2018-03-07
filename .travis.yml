@@ -5,7 +5,7 @@ deploy:
   provider: heroku
   api_key:
     secure: JgCuEuZufjh0Id6/HJ9dD71VVthuUZ3vY4wxlXb+VTdWNUQZkVn37+ErlRj0CHnCq6N1SxVJb02SRS93PBp9zQHJ0czFLjHrYIlGuyF2ZCiuMJLR6SDKqYqzgzPbHQdLCZBeUbCFlNWaKpv8ReyCl1gqdijyIa8I4fNMA6XNiHG1Apt8FYOjs1O8NZITrrtRE+VPAmwhCKlpflTTExEFvDRKjswJGS85VWdIyXm9HB8Yd5UDfpih96m5t+DQo1PR2DU4qE2cyBrXVXTSg/l1L4lvBG2K4z2JRFp/l0XfVQU+lEUQiWjrmQud1yy+wtBk+UKmZ+sgnP/hXzSSWzy0GflVoSqP22hJRisbxxs1YIuH7+viQ62r99scu0oLYXCDNEo36VTkuAj8WaW/KyG9cALKNszivlDwCG8Il732CiOpF/X8AJlQIXOvFVM4eoBiKTDuY5V16o3vN0zZ6sergTrBaale/JAhJ+9+lRDwVnyqP7OwpXaCOQ8AA0bPYQ3mSGiu5nxvgnwGChmD31VD+1fgwaOP7LG5EMNMK+g1akJP55SR4sBVrFCCrfNjZs2f/HmpNuAtYm2QgtaxClhaEDY8SPnHJ+BHqQneM+LtK33hHJTeChbOdR/3GHBVSpb5o7atlvMM9AHfgjqVKWZgERx+5bmlPbvWIkQUnB2m1o4=
-  app: projet_lpa2_tvet
+  app: projet-lpa2-tvet
   on:
     repo: trivetroff/projet
 before_script:
