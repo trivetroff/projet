@@ -1,3 +1,12 @@
 language: ruby
 rvm:
 - 2.3.5
+deploy:
+  provider: heroku
+  api_key:
+    secure: nFjVZXMh5wcorq/q0XtPLZfrpoPalgtLHbTvyxRYaRq/rNRlNQxqUEKUtxSx5w7u568knZUG4MEFSOjk6WzKFKs0NgGepL2d9ElYBWCoV7O1bPvkgpXMv+1aIEd8XAcayxUECed3KE8X3onmmmXuzm3r5ZdMwfchnW26vvDuP/stbay5rMCimHKG3KdKB1ugSRWs5ZjuP1fyfaTnVPjJNDD3FME9dlkdgeX8GA4dHQANLXLAUHMrenudt7Uk77I3L9FFevNCrU59HHYe3h/mPkTfeROlaUhH9w3UJ9XVjgsLBd8HGyrjvwaOOSj3c0sDTEzhN9ZsxTmp53b60fm8MYGEYFvnazyhSSIPNuxjnCoHCtVzKS4dkimLhkGJwxsxgOpQNnhoxB9k3LPXMhP1cJb2xXnD5bV1C7zlWHC5ZVLXVEfJ/Sve1mXFeV5X0t3wOaWBxthB9qH/oaDzbWmfCeRiEYIHzqTJO2oj3RqHtkzmzE5SD5MDcSQz604CnNucq9luDJTaOGvLwayj6A2Aac9OgscGEV/G0jVmaG1mT5O0Wu8U1d1659q5CuoElD9P1llZngBQJ4xA6Q6l46H/dAatBWsEWdopj5f7WskBaNIGQcMTqxTz3Zi7IPEPVixw7r+fWYvosVkiBBCVI61HtsrToM7mlv+5ZFRawyrc7C4=
+  app: projet
+  on:
+    repo: trivetroff/projet
+before_script:
+  - psql -c 'create database db_test;' -U postgres
