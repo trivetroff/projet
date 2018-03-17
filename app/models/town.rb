@@ -1,13 +1,13 @@
 class Town < ActiveRecord::Base
   before_validation :load_position
-  validates :latitude, :longitude, presence: true
+  validates :latitude, :long, presence: true
   
   private
   def load_position
-    places = Nominatim.search(town_name).limit(1).first
+    places = Nominatim.search(name).limit(1).first
     if places
       self.latitude = places.lat
-      self.longitude = places.lon
+      self.long = places.lon
     end
   end
 end
