@@ -6,6 +6,8 @@ gem 'rails', '4.2.7.1'
 
 gem 'forecast_io'
 
+gem 'simplecov', require: false, group: :test
+
 #Nominatim
 gem 'nominatim'
 #PG

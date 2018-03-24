@@ -8,7 +8,16 @@ deploy:
   app: projet-lpa2-tvet
   on:
     repo: trivetroff/projet
-  run: "rake db:migrate"
-  
+  run: rake db:migrate
 before_script:
 - psql -c 'create database db_test;' -U postgres
+- curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64
+  > ./cc-test-reporter
+- chmod +x ./cc-test-reporter
+- "./cc-test-reporter before-build"
+after_script:
+- "./cc-test-reporter format-coverage -t simplecov"
+- if [[ "$TRAVIS_TEST_RESULT" == 0 ]]; then ./cc-test-reporter upload-coverage; fi
+env:
+  global:
+    secure: AbxjgwhIzgiBmRyXZzQdCWYSNgvs6pf+X2lB5FvDFcL4LMRoj5Pnmh/8xfrs2GKQ1zSHAIeLvI+YlOhNH+VY5gMzHJqgPFFjbvudnwox2027qLf6hamf1mDUVQDTMjalPmMjxkFjqfb/auyQVCfyAMaH86wQ4oHcc2i566gIJwXmYzQ7p5TtCYfEAvqXhSTyY2/PcN/sussAoJoXyIHjJe+O5juAdXaB0DqNcZSpeBWQ3hrlHDo97Lx/hnPs7KJotyGcipWq4Ez0PhAtKt54j31LXW08M6917kXS4WMcQ3z+MkmAN4ai/U18zKULUjpWUSsJTgQT1is0CKcr2KYztuc16+seNzwdPCquJvsfe/x17q0QkAIfGevM5ao41nrIIQi68weQ527G5aHwOUVyFAp45cwErkejWFrZUIJEfhCHYbplUmNL+CZstr7X1yf+RK9L//+KHRGLlAZqZhAmp8sQzAoLrlSt4vu68FVwNZfsZgz1H95D+yR/p+V1sqgDG06ZeX7nZHsGWhgDEQqiTxMCb7UV2/Zvz3SRXcU5YxPDFmZud0xczgDl18lo4GOVvLCHx5Ej6UZG/ZGwSc6169BxileXpYK97vnxW42yBfjDIW5ZBSaVAFBQwxmZ9OLvM0GjuOj0dINzj91+1nt69yNykdDfuBeJpTxmLaZ+vrI=
