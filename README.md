@@ -7,4 +7,4 @@
 
 # projet
 
-Auteur: Tristan Vetroff
+Auteur: Tristan VETROFF
